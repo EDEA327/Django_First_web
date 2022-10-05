@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arima:wght@100&display=swap" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <title>Delete Tasks</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="top-bar">
+            <a href="{% url 'pendings-list' %}"> &#x21FD; Go Back</a>
+        </div>
+        <div class="form">
+            <form method="POST" action="">
+                {%csrf_token%}
+                <p>You are going to delete this task: {{task}} </p>
+                <input class="button" type="submit" value="Delete">
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
